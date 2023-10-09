@@ -1,7 +1,7 @@
 ---
 Title: Conversion to Scalability 
 date: 2023-10-09 01:00:00
-draft: true
+draft: false
 type: wsss
 tags:
   - wsss
@@ -164,3 +164,6 @@ DIRS -------------------------------------------------
 
 This is the stopping point for today. Next time we'll involve Rust in some way.
 I know how, but you don't. So stay tuned. This will become the most WS of all SS.
+
+The WSSS source code is on github: <https://github.com/pastly/wsss>.
+The version as of this post is tagged [post01](https://github.com/pastly/wsss/tree/post01).

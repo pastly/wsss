@@ -60,7 +60,7 @@ which ~~false starts~~ pointless details elided.
 `repo.nix` is this, and defines the root of a "nix package repository" built upon the main
 nixpkgs repository that comes with NixOS.
 
-```nix {linenos=inline}
+```nix
 let
   nixpkgs = import <nixpkgs> {};
   allPkgs = nixpkgs // pkgs;
@@ -82,7 +82,7 @@ boiler plate to call the second, and the second is boiler plate for calling
 `cp`.
 
 
-```nix {linenos=inline}
+```nix
 { pkgs, file_name }:
 derivation {
   inherit file_name;
@@ -94,7 +94,7 @@ derivation {
 }
 ```
 
-```bash {linenos=inline}
+```bash
 $coreutils/bin/cp $file_name $out
 ```
 
@@ -103,7 +103,7 @@ Beautiful, and in need of no explanation.
 `do-dir.nix` and `do-dir.sh` are here and slightly more complex than their file
 counterparts.
 
-```nix {linenos=inline}
+```nix
 { pkgs, lib, callPackage, dir_name }:
 let
   contents = builtins.readDir dir_name;
@@ -121,7 +121,7 @@ in
   }
 ```
 
-```bash {linenos=inline}
+```bash
 echo "FILES -------------------------------------------------" >> $out
 for f in $files; do
 	echo $f >> $out

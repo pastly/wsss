@@ -60,7 +60,7 @@ which ~~false starts~~ pointless details elided.
 `repo.nix` is this, and defines the root of a "nix package repository" built upon the main
 nixpkgs repository that comes with NixOS.
 
-```nix {linenos=table}
+```nix {linenos=inline}
 let
   nixpkgs = import <nixpkgs> {};
   allPkgs = nixpkgs // pkgs;
@@ -82,7 +82,7 @@ boiler plate to call the second, and the second is boiler plate for calling
 `cp`.
 
 
-```nix {linenos=table}
+```nix {linenos=inline}
 { pkgs, file_name }:
 derivation {
   inherit file_name;
@@ -94,7 +94,7 @@ derivation {
 }
 ```
 
-```bash {linenos=table}
+```bash {linenos=inline}
 $coreutils/bin/cp $file_name $out
 ```
 
@@ -103,7 +103,7 @@ Beautiful, and in need of no explanation.
 `do-dir.nix` and `do-dir.sh` are here and slightly more complex than their file
 counterparts.
 
-```nix {linenos=table}
+```nix {linenos=inline}
 { pkgs, lib, callPackage, dir_name }:
 let
   contents = builtins.readDir dir_name;
@@ -121,7 +121,7 @@ in
   }
 ```
 
-```bash {linenos=table}
+```bash {linenos=inline}
 echo "FILES -------------------------------------------------" >> $out
 for f in $files; do
 	echo $f >> $out
@@ -166,4 +166,4 @@ This is the stopping point for today. Next time we'll involve Rust in some way.
 I know how, but you don't. So stay tuned. This will become the most WS of all SS.
 
 The WSSS source code is on github: <https://github.com/pastly/wsss>.
-The version as of this post is tagged [post01](https://github.com/pastly/wsss/tree/post01).
+The version as of this post is branch [post01](https://github.com/pastly/wsss/tree/post01).
